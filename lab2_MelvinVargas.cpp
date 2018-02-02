@@ -1,16 +1,35 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 
 //funcion menu lee y valida la entrada.
 int menu();
 
+//funcion para ver si un numero es triangular.
+int triangular();
+
+//funcion para generar un numero aleatorio.
+int aleatorio();
+
+
 //Main
 int main(){
 	int op=0;
 	while(op!=4){
-		switch(menu()){
+		switch(op=menu()){
 			case 1:
+				int num1;
+				int numran;
+				int num2;
+				cout<<"Ingrese primer numero para calcular si es Triangular: ";
+				cin>>num1;
+				cout<<endl;
+				numran=aleatorio();
+				cout<<"Ingrese numero m para ver que triangular no lo supera: ";
+				cin>>num2;
+				cout<<endl;
+				cout<<"El numero random es: "<<numran<<endl;
 				break;
 			case 2:
 				break;
@@ -37,6 +56,14 @@ int menu(){
 		cout<<"4.Salir del programa"<<endl;
 		cout<<"Ingrese numero de opcion que desea evaluar: ";
 		cin>> num;
+		return num;
 	}
-	return num;
+	
+}
+
+//Funcion que genera el random;
+int aleatorio(){
+	int ran=0;
+	ran=rand()% 100+1;
+	return ran;
 }
