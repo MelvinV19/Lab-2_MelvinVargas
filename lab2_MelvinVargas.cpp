@@ -16,7 +16,8 @@ int aleatorio();
 
 //funcion para calcular el area de un triangulo.
 int area(int,int,int);
-
+//funcion para verificar si el triangulo es rectangulo.
+void rectangulo(int,int,int);
 
 //Main
 int main(){
@@ -37,13 +38,13 @@ int main(){
 				cout<<"El numero random es: "<<numran<<endl;
 				break;
 			case 2:
-				int ladoa;
-				int ladob;
-				int ladoc;
-				int anguloa;
-				int anuglob;
-				int anguloc;
-				int areatriangulo;
+				double ladoa;
+				double ladob;
+				double ladoc;
+				double anguloa;
+				double angulob;
+				double anguloc;
+				double areatriangulo;
 				cout<<"Ingrese numero del lado a"<<endl;
 				cin>>ladoa;
 				cout<<"Ingrese numero del lado b"<<endl;
@@ -53,6 +54,14 @@ int main(){
 				cout<<endl;
 				areatriangulo=area(ladoa,ladob,ladoc);
 				cout<<"El area de su triangulo es: "<<areatriangulo;
+				cout<<endl;
+				anguloa=acos((pow(ladob,2.0)+(pow(ladoc,2.0)-pow(ladoa,2.0)))/(2.0*ladob*ladoc))*180.0/PI;
+				angulob=acos((pow(ladoa,2.0)+(pow(ladoc,2.0)-pow(ladob,2.0)))/(2.0*ladoa*ladoc))*180.0/PI;
+				anguloc=180.0-anguloa-angulob;
+				cout<<"El angulo de alfa es: "<<anguloa<<endl;
+				cout<<"El angulo de beta es: "<<angulob<<endl;
+				cout<<"El angulo de gamma: "<<anguloc<<endl;
+				rectangulo(anguloa,angulob,anguloc);	
 				cout<<endl;
 				break;
 		    case 3:
@@ -97,7 +106,15 @@ int area(int ladoa,int ladob,int ladoc){
 	area=sqrt(s*((s-ladoa)*(s-ladob)*(s-ladoc)));
 					
 	return area;
-}	
+}
+//funcion para verificar si es triangulo rectangulo.
+void rectangulo(int alfa,int beta,int gamma){
+	if(alfa==90||beta==90||gamma==90){
+		cout<<"El triangulo es rectangulo."<<endl;
+	}else{
+		cout<<"EL triangulo no es rectangulo";
+	}
+}
 //Funcion para calcular el triangular.
 void triangular(int num){
 
