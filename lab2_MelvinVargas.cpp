@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
+# define PI 3.14159265
 using namespace std;
 
 
@@ -7,10 +9,13 @@ using namespace std;
 int menu();
 
 //funcion para ver si un numero es triangular.
-int triangular();
+void triangular(int);
 
 //funcion para generar un numero aleatorio.
 int aleatorio();
+
+//funcion para calcular el area de un triangulo.
+int area(int,int,int);
 
 
 //Main
@@ -32,6 +37,23 @@ int main(){
 				cout<<"El numero random es: "<<numran<<endl;
 				break;
 			case 2:
+				int ladoa;
+				int ladob;
+				int ladoc;
+				int anguloa;
+				int anuglob;
+				int anguloc;
+				int areatriangulo;
+				cout<<"Ingrese numero del lado a"<<endl;
+				cin>>ladoa;
+				cout<<"Ingrese numero del lado b"<<endl;
+				cin>>ladob;
+				cout<<"Ingrese numero del lado c"<<endl;
+				cin>>ladoc;
+				cout<<endl;
+				areatriangulo=area(ladoa,ladob,ladoc);
+				cout<<"El area de su triangulo es: "<<areatriangulo;
+				cout<<endl;
 				break;
 		    case 3:
 				break;
@@ -61,9 +83,22 @@ int menu(){
 	
 }
 
-//Funcion que genera el random;
+//Funcion que genera el random.
 int aleatorio(){
 	int ran=0;
 	ran=rand()% 100+1;
 	return ran;
+}
+//Funcion para calcular el area de un triangulo.
+int area(int ladoa,int ladob,int ladoc){
+	int s;
+	int area;
+	s=(ladoa+ladob+ladoc)/2;
+	area=sqrt(s*((s-ladoa)*(s-ladob)*(s-ladoc)));
+					
+	return area;
+}	
+//Funcion para calcular el triangular.
+void triangular(int num){
+
 }
