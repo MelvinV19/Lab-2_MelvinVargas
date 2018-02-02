@@ -36,6 +36,10 @@ int main(){
 				cin>>num2;
 				cout<<endl;
 				cout<<"El numero random es: "<<numran<<endl;
+				triangular(num1);
+				cout<<endl;
+				triangular(numran);
+				cout<<endl;
 				break;
 			case 2:
 				double ladoa;
@@ -117,5 +121,15 @@ void rectangulo(int alfa,int beta,int gamma){
 }
 //Funcion para calcular el triangular.
 void triangular(int num){
-
+	int acumulador=0;
+	for(int i=1;i<=num;i++){
+		acumulador=acumulador+i;
+		if(acumulador==num){
+		cout<<"El numero "<<num<<" es Triangular"<<endl;
+			break;
+		}
+	}
+	if(acumulador!=num){
+		cout<<"El numero "<<num<<" no es Triangular"<<endl;
+	}
 }
