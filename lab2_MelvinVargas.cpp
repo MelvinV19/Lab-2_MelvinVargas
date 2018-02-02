@@ -18,6 +18,8 @@ int aleatorio();
 int area(int,int,int);
 //funcion para verificar si el triangulo es rectangulo.
 void rectangulo(int,int,int);
+//funcion para calcular numero triangular previo.
+void triangularprevio(int);
 
 //Main
 int main(){
@@ -37,6 +39,8 @@ int main(){
 				cout<<endl;
 				cout<<"El numero random es: "<<numran<<endl;
 				triangular(num1);
+				cout<<endl;
+				triangularprevio(num2);
 				cout<<endl;
 				triangular(numran);
 				cout<<endl;
@@ -133,3 +137,18 @@ void triangular(int num){
 		cout<<"El numero "<<num<<" no es Triangular"<<endl;
 	}
 }
+//funcion para calcular el triangular previo
+void triangularprevio(int num){
+	int acumulador=0;
+	for(int i=1;i<=num;i++){
+		acumulador=acumulador+i;
+		if(acumulador==num){
+			cout<<"El numero "<<num<<" es Triangular previo"<<endl;
+			break;
+		}
+	}
+	if(acumulador!=num){
+		triangularprevio(num-1);
+	}
+}
+
