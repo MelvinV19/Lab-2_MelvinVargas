@@ -16,10 +16,15 @@ int aleatorio();
 
 //funcion para calcular el area de un triangulo.
 int area(int,int,int);
+
 //funcion para verificar si el triangulo es rectangulo.
 void rectangulo(int,int,int);
+
 //funcion para calcular numero triangular previo.
 void triangularprevio(int);
+
+//funcion para la serie de catalan.
+void catalan(int);
 
 //Main
 int main(){
@@ -73,6 +78,10 @@ int main(){
 				cout<<endl;
 				break;
 		    case 3:
+				int num;
+				cout<<"Ingrese numero de terminos a ver de la serie de catalan: ";
+				cin>>num;
+				catalan(num);
 				break;
 			case 4:
 				break;
@@ -149,6 +158,13 @@ void triangularprevio(int num){
 	}
 	if(acumulador!=num){
 		triangularprevio(num-1);
+	}
+}
+
+//funcion para la serie de catalan
+void catalan(int num){
+	for(int i=1;i<=num;i++){
+		
 	}
 }
 
