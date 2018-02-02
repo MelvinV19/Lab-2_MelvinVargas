@@ -24,7 +24,11 @@ void rectangulo(int,int,int);
 void triangularprevio(int);
 
 //funcion para la serie de catalan.
-void catalan(int);
+void catalan(long int);
+
+
+//funcion para calcular el factorial
+long int factorial(long int);
 
 //Main
 int main(){
@@ -79,9 +83,10 @@ int main(){
 				break;
 		    case 3:
 				int num;
-				cout<<"Ingrese numero de terminos a ver de la serie de catalan: ";
+				cout<<"Ingrese numero de terminos a ver de la serie de catalan: "<<endl;
 				cin>>num;
 				catalan(num);
+				cout<<endl<<" ";
 				break;
 			case 4:
 				break;
@@ -162,9 +167,30 @@ void triangularprevio(int num){
 }
 
 //funcion para la serie de catalan
-void catalan(int num){
-	for(int i=1;i<=num;i++){
-		
+void catalan(long int num){
+	long int numeroactual;
+	for(int i=0;i<num;i++){
+		if(i==0){
+			cout<<1<<" ";
+		}else{
+			numeroactual=(factorial(2*i))/(factorial(i+1)*(factorial(i)));
+			cout<<numeroactual<<" ";
+		}
 	}
 }
+
+//funcion para calcular factorial
+long int factorial(long int num){
+
+	long int fact=1;
+	for(int i=1;i<=num;i++){
+		fact=i*fact;
+	}
+	return fact;
+}
+
+		
+	
+	
+
 
